@@ -71,6 +71,8 @@ void ofxBarcodeReader::keyPressed(ofKeyEventArgs & key) {
 }
 
 void ofxBarcodeReader::update(ofEventArgs &args) {
+    if (!serial.isInitialized()) return;
+    
     float now = ofGetElapsedTimef();
     
     while (serial.available()) {
